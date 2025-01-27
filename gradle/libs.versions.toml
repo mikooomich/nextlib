@@ -1,6 +1,6 @@
 [versions]
 agp = "8.7.3"
-kotlin = "2.1.0"
+kotlin = "2.1.10"
 androidxMedia3 = "1.5.1"
 checkerQual = "3.48.3"
 googleErrorProne = "2.36.0"
