@@ -46,16 +46,16 @@ android {
     }
 }
 
-// Gradle task to setup ffmpeg
-val ffmpegSetup by tasks.registering(Exec::class) {
-    workingDir = file("../ffmpeg")
-    // export ndk path and run bash script
-    environment("ANDROID_SDK_HOME", android.sdkDirectory.absolutePath)
-    environment("ANDROID_NDK_HOME", android.ndkDirectory.absolutePath)
-    commandLine("bash", "setup.sh")
-}
-
-tasks.preBuild.dependsOn(ffmpegSetup)
+//// Gradle task to setup ffmpeg
+//val ffmpegSetup by tasks.registering(Exec::class) {
+//    workingDir = file("../ffmpeg")
+//    // export ndk path and run bash script
+//    environment("ANDROID_SDK_HOME", android.sdkDirectory.absolutePath)
+//    environment("ANDROID_NDK_HOME", android.ndkDirectory.absolutePath)
+//    commandLine("bash", "setup.sh")
+//}
+//
+//tasks.preBuild.dependsOn(ffmpegSetup)
 
 dependencies {
     implementation(libs.androidx.media3.exoplayer)
@@ -65,16 +65,16 @@ dependencies {
     compileOnly(libs.kotlin.annotations.jvm)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("mavenJava") {
-                groupId = "io.github.anilbeesetti"
-                artifactId = "nextlib-media3ext"
-                version = "1.0"
-
-                from(components["release"])
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("mavenJava") {
+//                groupId = "io.github.anilbeesetti"
+//                artifactId = "nextlib-media3ext"
+//                version = "1.0"
+//
+//                from(components["release"])
+//            }
+//        }
+//    }
+//}

@@ -46,31 +46,31 @@ android {
     }
 }
 
-// Gradle task to setup ffmpeg
-val ffmpegSetup by tasks.registering(Exec::class) {
-    workingDir = file("../ffmpeg")
-    // export ndk path and run bash script
-    environment("ANDROID_SDK_HOME", android.sdkDirectory.absolutePath)
-    environment("ANDROID_NDK_HOME", android.ndkDirectory.absolutePath)
-    commandLine("bash", "setup.sh")
-}
-
-tasks.preBuild.dependsOn(ffmpegSetup)
+//// Gradle task to setup ffmpeg
+//val ffmpegSetup by tasks.registering(Exec::class) {
+//    workingDir = file("../ffmpeg")
+//    // export ndk path and run bash script
+//    environment("ANDROID_SDK_HOME", android.sdkDirectory.absolutePath)
+//    environment("ANDROID_NDK_HOME", android.ndkDirectory.absolutePath)
+//    commandLine("bash", "setup.sh")
+//}
+//
+//tasks.preBuild.dependsOn(ffmpegSetup)
 
 dependencies {
     implementation(libs.androidx.annotation)
 }
 
 afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("mavenJava") {
-                groupId = "io.github.anilbeesetti"
-                artifactId = "nextlib-mediainfo"
-                version = "1.0"
-
-                from(components["release"])
-            }
-        }
-    }
+//    publishing {
+//        publications {
+//            create<MavenPublication>("mavenJava") {
+//                groupId = "io.github.anilbeesetti"
+//                artifactId = "nextlib-mediainfo"
+//                version = "1.0"
+//
+//                from(components["release"])
+//            }
+//        }
+//    }
 }

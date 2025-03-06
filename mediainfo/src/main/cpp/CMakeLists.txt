@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.22.1)
 
 project("mediainfo")
 
-set(ffmpeg_dir ${CMAKE_SOURCE_DIR}/../../../../ffmpeg/output)
+set(ffmpeg_dir ${CMAKE_SOURCE_DIR}/../../../../ffmpeg-android-maker/output)
 set(ffmpeg_libs ${ffmpeg_dir}/lib/${ANDROID_ABI})
 
 include_directories(${ffmpeg_dir}/include/${ANDROID_ABI})

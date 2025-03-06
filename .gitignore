@@ -12,3 +12,4 @@ local.properties
 ffmpeg/build
 ffmpeg/output
 ffmpeg/sources
+ffmpeg-android-maker
